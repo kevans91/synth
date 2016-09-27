@@ -309,7 +309,7 @@ package body PortScan.Ops is
             else
                --  text mode support, periodic status reports
                for b in builders'First .. num_builders loop
-                  if builder_states (b) /= shutdown and build_states (b) /= idle then
+                  if builder_states (b) /= shutdown and then builder_states (b) /= idle then
                      CYC.set_log_lines (b);
                   end if;
                end loop;
