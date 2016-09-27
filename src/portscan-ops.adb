@@ -308,6 +308,11 @@ package body PortScan.Ops is
                DPY.refresh_history_window;
             else
                --  text mode support, periodic status reports
+               for b in builders'First .. num_builders loop
+                  if builder_states (b) /= shutdown and build_states (b) /= idle then
+                     CYC.set_log_lines (b);
+                  end if;
+               end loop;
                if cntalert = alert_count'Last then
                   cntalert := alert_count'First;
                   declare
