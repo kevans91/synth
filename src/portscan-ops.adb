@@ -200,8 +200,8 @@ package body PortScan.Ops is
                                      JT.zeropad (Integer (slave), 2) & "] => " &
                                         port_name (instructions (slave)));
                         if not curses_support then
-                            TIO.Put_Line (CYC.elapsed_now & " [" &
-                                         JT.zeropad (Integer (slave), 2) & "] => " &
+                            TIO.Put_Line (CYC.elapsed_now & " => [" &
+                                         JT.zeropad (Integer (slave), 2) & "] " &
                                             port_name (instructions (slave)));
                         end if;
                      end if;
